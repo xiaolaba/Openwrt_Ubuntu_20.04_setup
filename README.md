@@ -8,9 +8,11 @@ sudo apt-get update
 sudo apt-get -y install subversion g++ zlib1g-dev build-essential git \
 python python3 python3-distutils libncurses5-dev gawk gettext unzip \
 file libssl-dev wget libelf-dev ecj fastjar java-propose-classpath
+
 #
 sudo apt-get -y install subversion build-essential libncurses5-dev \
 zlib1g-dev gawk git ccache gettext libssl-dev xsltproc zip
+
 #
 sudo apt-get -y install asciidoc binutils bzip2 gawk gettext libncurses5-dev \
 libz-dev patch  zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs \
@@ -32,7 +34,7 @@ make
 ```  
   
   
-the make & build is in processing,  
+the make & build is in processing,  it may take few hours to completion, depends on PC and hardware rating,
 
 ![openwrt_build_ok.JPG](openwrt_build_ok.JPG)  
 
