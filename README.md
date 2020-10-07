@@ -47,3 +47,53 @@ jsut in case, if you want to delete project files, this will help,
 ```  
 sudo rm -r openwrt
 ```  
+
+
+
+this is the issue and the first time of build but failed, really no idea what was it saying, looking for help,
+https://forum.openwrt.org/t/make-2-package-makefile-package-install-error-1/76162
+```  
+Configuring ca-bundle.
+Configuring kmod-ipt-offload.
+Configuring urngd.
+Configuring ppp-mod-pppoe.
+Setting flags for package libc to hold.
+Setting flags for package libgcc1 to hold.
+Setting flags for package libpthread to hold.
+cp -fpR /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79 /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root.orig-ath79
+Enabling boot
+Enabling bootcount
+Enabling cron
+Enabling dnsmasq
+Enabling done
+Enabling dropbear
+Enabling firewall
+Enabling gpio_switch
+Enabling led
+Enabling log
+Enabling network
+Enabling odhcpd
+Enabling sysctl
+Enabling sysfixtime
+Enabling sysntpd
+Enabling system
+Enabling umount
+Enabling urandom_seed
+Enabling urngd
+Enabling wpad
+sed -i "s/Installed-Time: .*/Installed-Time: 1602027105/" /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/usr/lib/opkg/status
+rm -rf /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/tmp/*
+rm -f /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/usr/lib/opkg/lists/*
+rm -f /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/usr/lib/opkg/info/*.postinst*
+rm -f /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/var/lock/*.lock
+rm -rf /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/boot
+find /home/xiao/openwrt/build_dir/target-mips_24kc_musl/root-ath79/ -mindepth 1 -execdir touch -hcd "@1602027105" "{}" +
+find: The relative path 'Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc' is included in the PATH environment variable, which is insecure in combination with the -execdir action of find.  Please remove that entry from $PATH
+make[2]: *** [package/Makefile:71: package/install] Error 1
+make[2]: Leaving directory '/home/xiao/openwrt'
+make[1]: *** [package/Makefile:108: /home/xiao/openwrt/staging_dir/target-mips_24kc_musl/stamp/.package_install] Error 2
+make[1]: Leaving directory '/home/xiao/openwrt'
+make: *** [/home/xiao/openwrt/include/toplevel.mk:236: world] Error 2
+xiao@xiao5820:~/openwrt$ $echo $PATH
+-bash: /home/xiao/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program: No such file or directory
+```  
