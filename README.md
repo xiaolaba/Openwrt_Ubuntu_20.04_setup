@@ -30,13 +30,15 @@ cd ~/openwrt
 make menuconfig
 make
 ```  
+  
+  
+the make & build is in processing,  
 
-
-
+![openwrt_build_ok.JPG](openwrt_build_ok.JPG)  
 
 
   
-delete project files
+jsut in case, if you want to delete project files, this will help,
 ```  
 sudo rm -r openwrt
 ```  
