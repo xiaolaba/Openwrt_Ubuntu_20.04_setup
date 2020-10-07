@@ -1,5 +1,8 @@
 # Openwrt_Ubuntu_20.04_setup
-Openwrt_Ubuntu_20.04_setup
+
+Openwrt_Ubuntu_20.04_setup  
+Win10 + Ubuntu 20.04 used, how to, here (https://github.com/xiaolaba/Win10_install_Ubuntu)  
+real machine with Ubuntu 20.04 should works too..  
 
 
 ```  
