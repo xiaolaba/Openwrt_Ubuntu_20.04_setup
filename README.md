@@ -1,7 +1,8 @@
 # Openwrt_Ubuntu_20.04_setup
 
 Openwrt_Ubuntu_20.04_setup  
-Win10 + Ubuntu 20.04 used, how to, here (https://github.com/xiaolaba/Win10_install_Ubuntu)  
+  
+Win10 2004 + Intel CPU + Ubuntu 20.04 used, how to, here (https://github.com/xiaolaba/Win10_install_Ubuntu)  
 real machine with Ubuntu 20.04 should works too..  
 
 
@@ -103,6 +104,7 @@ xiao@xiao5820:~/openwrt$ $echo $PATH
 ### why make[2]: *** [package/Makefile:71: package/install] Error 1
 Windows Subsystem for Linux (WLS) is NOT OFFICIALLY supported, this is what Openwrt's statement today.
 and try this workaround to disable WSL path, it works.
+
 ```  
 ## Windows Subsystem for Linux is NOT OFFICIALLY supported.
 ## https://forum.openwrt.org/t/make-2-package-makefile-package-install-error-1/76162
