@@ -101,8 +101,8 @@ xiao@xiao5820:~/openwrt$ $echo $PATH
 
 
 ### why make[2]: *** [package/Makefile:71: package/install] Error 1
-Windows Subsystem for Linux (WLS) is NOT OFFICIALLY supported. this is what Openwrt's statment today.
-and try this workaround to disable WSL path,
+Windows Subsystem for Linux (WLS) is NOT OFFICIALLY supported, this is what Openwrt's statement today.
+and try this workaround to disable WSL path, it works.
 ```  
 ## Windows Subsystem for Linux is NOT OFFICIALLY supported.
 ## https://forum.openwrt.org/t/make-2-package-makefile-package-install-error-1/76162
@@ -132,13 +132,16 @@ echo $PATH
 
 
 
-```   
-exit from root, back to user account privilege, just press CTRL+D,
-this is output, not reboot PC yet.  
+```  
+.  
+.  
+exit from root, back to user account privilege, just press CTRL+D,  
+this is terminal output, not reboot PC yet.  
 ![openwrt_WLS_wsl.conf.JPG](openwrt_WLS_wsl.conf.JPG)  
 
 
-Win10, regedit.exe, change the registry, find this reg key, {GUID} may vary with different PC or differnt session of Ubuntu installation.   
+In Win10, uses regedit.exe, change the registry, find this reg key,   
+{GUID} may vary with different PC or differnt session of Ubuntu installation.   
 ```
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}\Flags  
 ```
@@ -148,7 +151,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}\Flags
 change to "Flags"=dword:0000007 to "Flags"=dword:0000005  
 
 .  
-the backup the registry of "Flags"=dword:0000007  
+the backup the registry with "Flags"=dword:0000007,  
 
 ```  
 Windows Registry Editor Version 5.00
@@ -180,7 +183,7 @@ Windows Registry Editor Version 5.00
 ```  
 .  
 
-see error log & registry key, same the string, CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc
+see previous error log & registry key, same string, CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc  
 ```  
 Find: The relative path 'Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc' is included in the PATH environment variable, which is insecure in combination with the -execdir action of find.  Please remove that entry from $PATH
 ```  
