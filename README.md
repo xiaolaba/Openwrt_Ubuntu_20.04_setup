@@ -192,6 +192,6 @@ make j=1 V=Sc
 
 ```  
 .  
-vola, job done.  
+wowla, job done, built succeed. thanks to ![Kar200](https://forum.openwrt.org/u/kar200) who has advised this solution.
 
 ![openwrt_build_done.JPG](openwrt_build_done.JPG)  
