@@ -133,6 +133,65 @@ echo $PATH
 
 
 ```   
-exit from root, back to user account previlage, just press CTRL+D,  
+exit from root, back to user account privilege, just press CTRL+D,
 this is output, not reboot PC yet.  
 ![openwrt_WLS_wsl.conf.JPG](openwrt_WLS_wsl.conf.JPG)  
+
+
+Win10, regedit.exe, change the registry, find this reg key, {GUID} may vary with different PC or differnt session of Ubuntu installation.   
+```
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}\Flags  
+```
+![key7.JPG](key7.JPG)  
+
+
+change to "Flags"=dword:0000007 to "Flags"=dword:0000005  
+
+.  
+the backup the registry of "Flags"=dword:0000007  
+
+```  
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\{bd856851-be16-4939-bcdb-d9c41948229f}]
+"State"=dword:00000001
+"DistributionName"="Ubuntu-20.04"
+"Version"=dword:00000002
+"BasePath"="C:\\Users\\user0\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\\LocalState"
+"Flags"=dword:00000007
+"DefaultUid"=dword:000003e8
+"PackageFamilyName"="CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc"
+"KernelCommandLine"="BOOT_IMAGE=/kernel init=/init"
+"DefaultEnvironment"=hex(7):48,00,4f,00,53,00,54,00,54,00,59,00,50,00,45,00,3d,\
+  00,78,00,38,00,36,00,5f,00,36,00,34,00,00,00,4c,00,41,00,4e,00,47,00,3d,00,\
+  65,00,6e,00,5f,00,55,00,53,00,2e,00,55,00,54,00,46,00,2d,00,38,00,00,00,50,\
+  00,41,00,54,00,48,00,3d,00,2f,00,75,00,73,00,72,00,2f,00,6c,00,6f,00,63,00,\
+  61,00,6c,00,2f,00,73,00,62,00,69,00,6e,00,3a,00,2f,00,75,00,73,00,72,00,2f,\
+  00,6c,00,6f,00,63,00,61,00,6c,00,2f,00,62,00,69,00,6e,00,3a,00,2f,00,75,00,\
+  73,00,72,00,2f,00,73,00,62,00,69,00,6e,00,3a,00,2f,00,75,00,73,00,72,00,2f,\
+  00,62,00,69,00,6e,00,3a,00,2f,00,73,00,62,00,69,00,6e,00,3a,00,2f,00,62,00,\
+  69,00,6e,00,3a,00,2f,00,75,00,73,00,72,00,2f,00,67,00,61,00,6d,00,65,00,73,\
+  00,3a,00,2f,00,75,00,73,00,72,00,2f,00,6c,00,6f,00,63,00,61,00,6c,00,2f,00,\
+  67,00,61,00,6d,00,65,00,73,00,00,00,54,00,45,00,52,00,4d,00,3d,00,78,00,74,\
+  00,65,00,72,00,6d,00,2d,00,32,00,35,00,36,00,63,00,6f,00,6c,00,6f,00,72,00,\
+  00,00,00,00
+
+
+```  
+.  
+
+see error log & registry key, same the string, CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc
+```  
+Find: The relative path 'Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc' is included in the PATH environment variable, which is insecure in combination with the -execdir action of find.  Please remove that entry from $PATH
+```  
+
+
+time to reboot the PC, and then build again,
+```  
+make j=1 V=Sc
+
+```  
+.  
+vola, job done.  
+
+![openwrt_build_done.JPG](openwrt_build_done.JPG)  
