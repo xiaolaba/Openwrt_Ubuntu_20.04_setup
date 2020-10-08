@@ -148,7 +148,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{GUID}\Flags
 ![key7.JPG](key7.JPG)  
 
 
-change to "Flags"=dword:0000007 to "Flags"=dword:0000005  
+change "Flags"=dword:0000007 to "Flags"=dword:0000005  
 
 .  
 the backup the registry with "Flags"=dword:0000007,  
@@ -195,6 +195,6 @@ make j=1 V=Sc
 
 ```  
 .  
-wowla, job done, built succeed. thanks to ![Kar200](https://forum.openwrt.org/u/kar200) who has advised this solution.
+wowla, job done, built succeed. thanks to [Kar200](https://forum.openwrt.org/u/kar200) who has advised this solution.
 
 ![openwrt_build_done.JPG](openwrt_build_done.JPG)  
