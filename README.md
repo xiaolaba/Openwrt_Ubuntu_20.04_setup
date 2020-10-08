@@ -97,3 +97,42 @@ make: *** [/home/xiao/openwrt/include/toplevel.mk:236: world] Error 2
 xiao@xiao5820:~/openwrt$ $echo $PATH
 -bash: /home/xiao/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program: No such file or directory
 ```  
+
+
+
+### why make[2]: *** [package/Makefile:71: package/install] Error 1
+Windows Subsystem for Linux (WLS) is NOT OFFICIALLY supported. this is what Openwrt's statment today.
+and try this workaround to disable WSL path,
+```  
+## Windows Subsystem for Linux is NOT OFFICIALLY supported.
+## https://forum.openwrt.org/t/make-2-package-makefile-package-install-error-1/76162
+## https://openwrt.org/docs/guide-developer/build-system/wsl
+## build /etc/wsl.conf
+
+## uses root, otherwise cannot create /etc/wsl.conf
+## password will be asked
+sudo su  
+
+sudo cat <<EOT >> /etc/wsl.conf  
+[interop]
+appendWindowsPath = false  
+EOT
+
+## exit root, press CTRL+D
+
+## edit the file /etc/wsl.conf
+#nano /etc/wsl.conf
+
+## show content /etc/wsl.conf  
+cat /etc/wsl.conf
+
+ls -l /etc/wsl.conf
+
+echo $PATH
+
+
+
+```   
+
+this is output, not reboot PC yet.  
+![openwrt_WLS_wsl.conf.JPG](openwrt_WLS_wsl.conf.JPG)  
