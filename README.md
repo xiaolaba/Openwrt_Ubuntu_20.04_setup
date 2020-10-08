@@ -46,7 +46,7 @@ the make & build is in processing,  it may take few hours to completion, depends
   
 jsut in case, if you want to delete project files, this will help,
 ```  
-sudo rm -r openwrt
+sudo rm -r ~/openwrt
 ```  
 
 
