@@ -120,7 +120,7 @@ EOT
 
 ## exit root, press CTRL+D
 
-## edit the file /etc/wsl.conf
+## edit the file /etc/wsl.conf, not used
 #nano /etc/wsl.conf
 
 ## show content /etc/wsl.conf  
@@ -133,6 +133,6 @@ echo $PATH
 
 
 ```   
-
+exit from root, back to user account previlage, just press CTRL+D,  
 this is output, not reboot PC yet.  
 ![openwrt_WLS_wsl.conf.JPG](openwrt_WLS_wsl.conf.JPG)  
