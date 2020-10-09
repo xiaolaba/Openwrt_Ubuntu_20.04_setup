@@ -5,6 +5,16 @@ Openwrt_Ubuntu_20.04_setup
 Win10 2004 + Intel CPU + Ubuntu 20.04 used, how to, here (https://github.com/xiaolaba/Win10_install_Ubuntu)  
 real machine with Ubuntu 20.04 should works too..  
 
+WLS1 (Windows Linux Support 1) used only, WLS2 no test yet. Win10, powershell, command following to tell which version of WLS, 
+```  
+wls -l -v
+```  
+result,
+![wls1.JPG](wls1.JPG)  
+.  
+.  
+
+
 
 ```  
 git clone https://github.com/openwrt/openwrt
