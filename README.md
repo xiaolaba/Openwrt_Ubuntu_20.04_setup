@@ -9,7 +9,7 @@ WLS1 (Windows Linux Support 1) used only, WLS2 no test yet. Win10, powershell, c
 ```  
 wls -l -v
 ```  
-result,
+result,  
 ![wls1.JPG](wls1.JPG)  
 .  
 .  
