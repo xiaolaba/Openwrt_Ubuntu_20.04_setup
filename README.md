@@ -7,7 +7,7 @@ real machine with Ubuntu 20.04 should works too..
 
 WSL 1 (Windows Subsystem for Linux 1) used only, WSL 2 no test yet. Win10, powershell, command following to tell which version of WSL, 
 ```  
-wls -l -v
+wsl -l -v
 ```  
 result,  
 ![wls1.JPG](wls1.JPG)  
